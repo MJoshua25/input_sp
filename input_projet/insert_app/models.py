@@ -8,7 +8,7 @@ class Test_ins(models.Model):
     nom = models.CharField(max_length=255)
     prenom = models.CharField(max_length=255)
     email = models.EmailField(max_length=254)
-    image = models.ImageField(upload_to='profile/')
+    image = models.ImageField(upload_to='profile/', null=True)
 
     class Meta:
         """Meta definition for test_ins."""
@@ -18,4 +18,4 @@ class Test_ins(models.Model):
 
     def __str__(self):
         """Unicode representation of test_ins."""
-        pass
+        return 'Nom: {}, Prenom: {}'.format(self.nom, self.prenom)
